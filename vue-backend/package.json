@@ -1,0 +1,31 @@
+{
+  "name": "full-stack-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx babel-node api/index.js",
+    "dev": "npx nodemon --exec npx babel-node api/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "vercel-build": "echo hello"
+  },
+  "keywords": [],
+  "author": "Jannes Kröll",
+  "license": "",
+  "dependencies": {
+    "@babel/runtime": "^7.22.6",
+    "body-parser": "^1.20.2",
+    "connect-history-api-fallback": "^2.0.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongodb": "^5.7.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.22.9",
+    "@babel/core": "^7.22.9",
+    "@babel/node": "^7.22.6",
+    "@babel/plugin-transform-runtime": "^7.22.9",
+    "@babel/preset-env": "^7.22.9",
+    "nodemon": "^3.0.1"
+  }
+}
