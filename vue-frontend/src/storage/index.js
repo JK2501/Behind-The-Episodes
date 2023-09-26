@@ -19,6 +19,8 @@ const store = createStore({
                 state.Filter[key] = [];
             } else if (typeof state.Filter[key] === 'string') {
                 state.Filter[key] = '';
+            } else if (typeof state.Filter[key] === 'object' && state.Filter[key] != null){
+                state.Filter[key] = {};
             }
         }
     }, 

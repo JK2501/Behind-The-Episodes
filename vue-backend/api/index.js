@@ -19,18 +19,18 @@ const app = express();
 app.use(bodyParser.json());
 
 // Allow cross-origin requests
-// app.use((req, res, next) => {
-//     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5173'); 
-//     res.setHeader('Access-Control-Allow-Methods', 'GET');
-//     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-//     next();
-// });
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5173'); 
+    res.setHeader('Access-Control-Allow-Methods', 'GET');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+});
 
-app.use(express.static(path.resolve(__dirname, '../public'), { maxAge: '1y', etag: false }));
-app.use(history());
+// app.use(express.static(path.resolve(__dirname, '../public'), { maxAge: '1y', etag: false }));
+// app.use(history());
 
 // Serve Images to :5173 that follow /episodes dir 
-app.use('/episodes', express.static(path.join(__dirname, '../public/assets/img')));
+// app.use('/episodes', express.static(path.join(__dirname, '../public/assets/img')));
 
 app.get('/api/episodes/:episodeId', async (req, res) => {
     const {episodeId } = req.params;
@@ -75,9 +75,9 @@ app.get('/api/episodes', async (req, res) => {
     }
 });
 
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../public/index.html'));
-});
+// app.get('*', (req, res) => {
+//     res.sendFile(path.join(__dirname, '../public/index.html'));
+// });
 
 app.listen(process.env.PORT || 8000, () => {
     console.log('Server is listening on port 8000!');

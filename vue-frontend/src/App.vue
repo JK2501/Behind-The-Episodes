@@ -9,7 +9,7 @@
 <script>
   import axios from 'axios';
   import NavMobile from './components/NavMobile.vue';
-  import ListContainer from './components/temp.vue';
+  import ListContainer from './components/ListContainer.vue';
   import ModalContainer from './components/ModalContainer.vue';
 
   import { mapState } from 'vuex';

@@ -15,10 +15,12 @@
   <style scoped>
     .modal-character {
         position: relative;
-        text-decoration: none;
+        /* list-style-type: none; */
         font-size: 14px;
-        display: block;
-        padding: 0.4rem;
+        height: 30px;
+        display: grid;
+        place-items: center;
+        padding: 0 0.4rem;
         border: 1px solid var(--new-colors-white);
         border-radius: 5rem;
         color: var(--new-colors-white);
