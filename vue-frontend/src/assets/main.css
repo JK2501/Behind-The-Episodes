@@ -19,6 +19,10 @@ body {
       display: block !important;
     }
 
+    .modal-container {
+      display: none !important;
+    }
+
     .nav-mobile > label p[name="info"]{
       display: block;
     }

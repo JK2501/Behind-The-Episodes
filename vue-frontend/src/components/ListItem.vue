@@ -17,8 +17,15 @@
         name: 'ListItem',
         props: ['episode'],
         methods: {
+            returnToViewer(){
+                // Unchecks the checkbox -> displays selection
+                // Note: This only affects the page when on mobile (< 1000px)
+                const mobileTabSelector = document.querySelector(".nav-mobile > label > input");
+                mobileTabSelector.checked = false;
+            },
             storeId(id){
                 this.$store.commit('setSelectedEpisodeId', id);
+                this.returnToViewer();
                 console.log(this.$store.state.selectedEpisodeId);
             },
             getImageUrl(name) {

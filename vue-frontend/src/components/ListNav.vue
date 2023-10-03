@@ -1,5 +1,5 @@
 <template>
-  <div class="list-nav">
+  <div class="list-nav" id="list-nav">
     <ListInput/>
     <ListFilter />
     <h3 class="list-counter">{{ counter }}</h3>

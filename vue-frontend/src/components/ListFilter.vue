@@ -101,8 +101,10 @@ import FilterRadio from './FilterRadio.vue';
         }
       },
       clearSelection(){
-        const inputs = document.getElementsByTagName('input');
-        for(let input of inputs){
+        const navigation = document.getElementById('list-nav');
+        const inputs = navigation.querySelectorAll('input');
+        console.log(inputs);
+        inputs.forEach((input) => { 
           if(input.type === "checkbox" && input.checked){
             input.checked = false;
           }
@@ -110,7 +112,7 @@ import FilterRadio from './FilterRadio.vue';
             input.value = "";
             this.emptyProperty("name");
           }
-        }
+        });
         this.selection.Characters = [];
         this.selection.Author = "";
       }
