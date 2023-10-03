@@ -1,9 +1,31 @@
 @import './base.css';
 
-body {
-  background-color: var(--new-colors-black);
-}
-
 body::-webkit-scrollbar{
   display: none;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--color-text);
+  background-color: var(--new-colors-black);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (max-width: 1000px){
+  body:has(.nav-mobile > label > input:checked){
+    .list {
+      display: block !important;
+    }
+
+    .nav-mobile > label p[name="info"]{
+      display: block;
+    }
+
+    .nav-mobile > label p[name="catalogue"]{
+      display: none;
+    }
+
+  }
 }

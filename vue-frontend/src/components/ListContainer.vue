@@ -7,7 +7,7 @@
 
 <script>
   import ListNav from './ListNav.vue';
-  import ListCatalogue from './ListCatalogue.vue';
+  import ListCatalogue from './temp.vue';
 
     export default {
         name: 'ListContainer',

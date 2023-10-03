@@ -1,26 +1,16 @@
 <template>
     <div class="nav-mobile">
-        <a><i id="home" class="fas fa-house" @click="swap" :class="{ active: i == 0 }"></i></a>
-        <a><i id="list" class="fas fa-bars"  @click="swap" :class="{ active: i == 1 }"></i></a>
+        <label>
+            <input type="checkbox">
+            <p name="catalogue">Episoden &#8250;</p>
+            <p name="info">&#8249; Auswahl</p>
+        </label>
     </div>
 </template>
     
 <script>
     export default {
         name: "NavMobile",
-        data(){
-            return {
-                i: 0,
-            }
-        },
-        methods: {
-            swap(e){ e.target.id === "home" ? this.i = 0 : this.i = 1; }
-        },
-        watch: {
-            i(newValue){
-                this.$emit('id', newValue);
-            }
-        }
     }
 </script>
     
@@ -35,7 +25,7 @@
             display: flex;
             flex-direction: row;
             align-items: center;
-            justify-content: flex-start;
+            justify-content: center;
             z-index: 5;
             position: relative;
             height: 33px;
@@ -47,18 +37,23 @@
             visibility: visible;
         }
 
-        .nav-mobile a{
-            margin-left: 1rem;
+        .nav-mobile > label {
+            display: grid;
+        }
+
+        .nav-mobile > label input {
+            appearance: none;
+        }
+
+        .nav-mobile > label p {
+            color: var(--new-colors-white);
             cursor: pointer;
+            font-family: Helvetica, Arial, sans-serif;
         }
 
-        .nav-mobile a > i {
-            font-size: 1.25em;
+        .nav-mobile > label p[name="info"] {
+            display: none;
         }
-    }
-
-    .active {
-        color: var(--new-colors-white) !important;
     }
   
 </style>

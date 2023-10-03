@@ -2,7 +2,7 @@
     <main class="main">
       <ListContainer/> 
       <ModalContainer :episode="fallBackContent"/>
-      <NavMobile @id="swap"/>
+      <NavMobile/>
     </main>
 </template>
 
@@ -45,12 +45,6 @@
       },
     },
     methods: {  
-      swap(newValue){
-        const main = [...document.getElementsByClassName("main")[0].children];
-        let nbNum = Math.abs(newValue - 1);
-        main.at(newValue).style.display = "none";
-        main.at(nbNum).style.display = "block";
-      },
       async fetchNewEpisode(id){
         const result = await axios.get(`${import.meta.env.VITE_SERVER}/api/episodes/${id}`);
         const episode = result.data;
