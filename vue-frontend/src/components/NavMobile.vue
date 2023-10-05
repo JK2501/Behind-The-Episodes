@@ -1,10 +1,6 @@
 <template>
     <div class="nav-mobile">
-        <label>
-            <input type="checkbox">
-            <p name="catalogue">Episoden &#8250;</p>
-            <p name="info">&#8249; Auswahl</p>
-        </label>
+        <label for="tab-switcher"></label>
     </div>
 </template>
     
@@ -38,21 +34,15 @@
         }
 
         .nav-mobile > label {
-            display: grid;
-        }
-
-        .nav-mobile > label input {
-            appearance: none;
-        }
-
-        .nav-mobile > label p {
-            color: var(--new-colors-white);
             cursor: pointer;
-            font-family: Helvetica, Arial, sans-serif;
+            display: flex;
         }
 
-        .nav-mobile > label p[name="info"] {
-            display: none;
+        .nav-mobile > label::before {
+            --text: "Episoden ›";
+            content: var(--text);
+            font-size: 18px;
+            color: var(--new-colors-white);
         }
     }
   

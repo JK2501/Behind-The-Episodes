@@ -1,8 +1,9 @@
 <template>
     <main class="main">
-      <ListContainer/> 
-      <ModalContainer :episode="fallBackContent"/>
+      <input type="checkbox" class="tab-switcher" id="tab-switcher"> 
       <NavMobile/>
+      <ListContainer/>
+      <ModalContainer :episode="fallBackContent"/>
     </main>
 </template>
 
@@ -68,6 +69,10 @@
     width: 100vw;
   }
 
+  .main > input.tab-switcher {
+    display: none;
+  }
+
   @media (max-width: 1000px){
     .main {
       width: 100%;
@@ -75,5 +80,4 @@
       grid-template-columns: unset;
     }
   }
-
 </style>

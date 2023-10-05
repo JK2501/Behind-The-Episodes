@@ -20,7 +20,7 @@
             returnToViewer(){
                 // Unchecks the checkbox -> displays selection
                 // Note: This only affects the page when on mobile (< 1000px)
-                const mobileTabSelector = document.querySelector(".nav-mobile > label > input");
+                const mobileTabSelector = document.getElementById("tab-switcher");
                 mobileTabSelector.checked = false;
             },
             storeId(id){

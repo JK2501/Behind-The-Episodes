@@ -14,22 +14,15 @@ body {
 }
 
 @media (max-width: 1000px){
-  body:has(.nav-mobile > label > input:checked){
-    .list {
-      display: block !important;
-    }
+  .tab-switcher:checked ~ div.modal-container {
+    display: none !important;
+  }
 
-    .modal-container {
-      display: none !important;
-    }
+  .tab-switcher:checked ~ div.list {
+    display: block !important; 
+  }
 
-    .nav-mobile > label p[name="info"]{
-      display: block;
-    }
-
-    .nav-mobile > label p[name="catalogue"]{
-      display: none;
-    }
-
+  .tab-switcher:checked ~ div.nav-mobile > label::before {
+    --text: "‹ Auswahl";
   }
 }
